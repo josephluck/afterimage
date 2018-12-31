@@ -1,0 +1,24 @@
+{
+  "name": "afterimage",
+  "version": "1.0.0",
+  "main": "lib/afterimage.js",
+  "files": [
+    "lib"
+  ],
+  "repository": "https://github.com/josephluck/afterimage",
+  "author": "Joseph Luck",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "postinstall": "yarn build && yarn link"
+  },
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "typescript": "^3.2.2"
+  }
+}
