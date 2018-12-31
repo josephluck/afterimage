@@ -2,7 +2,7 @@
 
 Images that load after they have been scrolled in to view.
 
-Demo: https://build-nj5bg2xwf.now.sh/
+Demo: https://build-63d9j8yeh.now.sh/
 
 ## Installation
 
@@ -61,6 +61,8 @@ interface Props {
 - `aspectHeight` Optional number representing the image's aspect ratio height, i.e. `9` in `16:9`. Used to size the placeholder element. Defaults to `9`.
 - `aspectWidth` Similar to `aspectHeight`. Defaults to `16`.
 - `withPlaceholder` boolean to determine whether to render a placeholder element or not. Useful if you do not know the aspect ratio of the image ahead of time.
+
+Afterimage will spread any other given props to the `<img />` tag. For example, `alt`, `onClick` etc.
 
 ## CSS classes
 

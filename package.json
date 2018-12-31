@@ -1,16 +1,17 @@
 {
   "name": "afterimage",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "main": "lib/afterimage.js",
   "files": [
-    "lib"
+    "lib",
+    "README.md"
   ],
   "repository": "https://github.com/josephluck/afterimage",
   "author": "Joseph Luck",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "postinstall": "yarn build && yarn link"
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "react": "^16.7.0",

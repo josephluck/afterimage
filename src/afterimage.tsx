@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-interface Props {
+interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   className?: string;
   onLoad?: () => any;
@@ -110,7 +110,8 @@ export class AfterImage extends React.Component<Props, State> {
       className = "",
       aspectHeight = 9,
       aspectWidth = 16,
-      withPlaceholder = true
+      withPlaceholder = true,
+      ...imgProps
     } = this.props;
     const { hasLoaded } = this.state;
     const aspectRatio = aspectHeight / aspectWidth;
@@ -125,6 +126,7 @@ export class AfterImage extends React.Component<Props, State> {
         ref={this.setWrapperRef}
       >
         <img
+          {...imgProps}
           className="afterimage__image"
           onLoad={this.onImageLoad}
           ref={this.setImgRef}
@@ -145,7 +147,8 @@ export class AfterImage extends React.Component<Props, State> {
               width: "100%",
               paddingTop: `${aspectRatio * 100}%`,
               opacity: hasLoaded ? 0 : 1,
-              transition: "opacity 300ms ease"
+              transition: "opacity 300ms ease",
+              pointerEvents: 'none'
             }}
           />
         )}

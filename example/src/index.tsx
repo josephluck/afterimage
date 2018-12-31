@@ -34,6 +34,17 @@ function ExampleApp() {
         aspectHeight={400}
         aspectWidth={1300}
       />
+      <hr />
+      <br />
+      <br />
+      👇 Scroll down for more props
+      <div style={{ height: "100vh" }} />
+      <AfterImage
+        src="https://via.placeholder.com/1600x900"
+        alt="An alt!"
+        onClick={() => console.log("Clicked")}
+        onMouseEnter={() => console.log("Mouse entered")}
+      />
     </div>
   );
 }
