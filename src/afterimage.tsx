@@ -163,24 +163,23 @@ const CACHE_KEY = "__AFTER_IMAGE_INTERSECTION_OBSERVER__";
  * Returns an IntersectionObserver that loads the image
  * when it is at least 10% visible in the viewport.
  *
- * NB: Cached on the window for perf
+ * NB: Cached on the window for performance
  */
 function getImageLoaderObserver(): null | IntersectionObserver {
   if (typeof IntersectionObserver === "undefined") {
     return null;
   }
 
-  // return the cached one for perf
+  // return the cached observer for performance
   if (typeof window[CACHE_KEY] !== "undefined") {
     return window[CACHE_KEY];
   }
 
+  // create a new observer and cache it on the window
   const threshold = 0.1; // 10% in view
-
-  // create a new one and cache it on the window
   window[CACHE_KEY] = new IntersectionObserver(
-    wrappers => {
-      wrappers.map(entry => {
+    entries => {
+      entries.map(entry => {
         const img = entry.target.querySelector("img");
         if (img && !img.src && entry.intersectionRatio >= threshold) {
           // data-src is read from the wrapperElm so that the intersection observer does not need to read from props and can be cached
