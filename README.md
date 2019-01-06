@@ -2,7 +2,8 @@
 
 Images that load after they have been scrolled in to view.
 
-Demo: https://build-63d9j8yeh.now.sh/
+Demo: [https://build-63d9j8yeh.now.sh/](https://build-63d9j8yeh.now.sh/)
+Blog: [Lazy loading images with React](https://josephluck.co.uk/blog/lazy-loading-images-with-react/)
 
 ## Installation
 
@@ -37,12 +38,14 @@ export default function App() {
 
 ## How it works
 
-A blog post is in the works but simply put, afterimage uses a `IntersectionObserver` to determine whether the image is in the viewport and defers applying the `src` attribute of the `<img />` tag until it is.
+TLDR afterimage uses a `IntersectionObserver` to determine whether the image is in the viewport and defers applying the `src` attribute of the `<img />` tag until it is.
 
-## Props
+Read the [blog post](https://josephluck.co.uk/blog/lazy-loading-images-with-react/) if you want a more in-depth explanation.
 
-Afterimage assumes the image is of aspect ratio `16:9` and will render a placeholder element in place of the actual image whilst the image is off-screen or is loading. If you wish to turn this behavior off, either specify an `aspectHeight`
-and `aspectWidth` or set `withPlaceholder` to `false`.
+## Options
+
+Afterimage will render a placeholder element in place of the actual image whilst the image is off-screen or is loading. By default, the placeholder will be a `16:9` size, but if you know the aspect ratio of your image ahead of time, you can set both `aspectHeight`
+and `aspectWidth`. If you wish to turn the placeholder off set `withPlaceholder` to `false`.
 
 ```typescript
 interface Props {
@@ -62,7 +65,7 @@ interface Props {
 - `aspectWidth` Similar to `aspectHeight`. Defaults to `16`.
 - `withPlaceholder` boolean to determine whether to render a placeholder element or not. Useful if you do not know the aspect ratio of the image ahead of time.
 
-Afterimage will spread any other given props to the `<img />` tag. For example, `alt`, `onClick` etc.
+Afterimage will apply any other props to the `<img />` tag. For example, `alt`, `onClick` etc.
 
 ## CSS classes
 
@@ -72,3 +75,5 @@ CSS class names are structured with BEM and can be overridden with CSS. Afterima
 - `afterimage--loaded` applied when afterimage has loaded the image in to view
 - `afterimage__image` applied to the `<img />` tag itself
 - `afterimage__placeholder` applied to the placeholder element
+
+> You'll have to use `!important` to override the inline styles! Sorry!
