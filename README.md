@@ -2,8 +2,8 @@
 
 Images that load after they have been scrolled in to view.
 
-Demo: [https://build-63d9j8yeh.now.sh/](https://build-63d9j8yeh.now.sh/)
-Blog: [Lazy loading images with React](https://josephluck.co.uk/blog/lazy-loading-images-with-react/)
+- Demo: [https://build-63d9j8yeh.now.sh/](https://build-63d9j8yeh.now.sh/)
+- Blog: [Lazy loading images with React](https://josephluck.co.uk/blog/lazy-loading-images-with-react/)
 
 ## Installation
 
